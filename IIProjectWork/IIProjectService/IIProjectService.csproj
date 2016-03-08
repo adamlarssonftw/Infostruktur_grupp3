@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,26 +60,57 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.svc" />
+    <Content Include="App_Data\TestXML.xml" />
+    <Content Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Service References\EventAndNamingServiceReference\IIService.disco" />
+    <None Include="Service References\EventAndNamingServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\EventAndNamingServiceReference\configuration.svcinfo" />
+    <None Include="Service References\EventAndNamingServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="PassageService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="Service References\EventAndNamingServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="PassageService.svc.cs">
+      <DependentUpon>PassageService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IPassageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Service References\EventAndNamingServiceReference\IIService.wsdl" />
+    <None Include="Service References\EventAndNamingServiceReference\IIService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventAndNamingServiceReference\IIService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventAndNamingServiceReference\IIService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EventAndNamingServiceReference\IIService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EventAndNamingServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

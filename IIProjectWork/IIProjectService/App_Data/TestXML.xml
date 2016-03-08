@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tester>
+  <Test>
+    <Data>testdata1</Data>
+  </Test>
+  <Test>
+    <Data>testdata2</Data>
+  </Test>
+  <Test>
+    <Data>testdata3</Data>
+  </Test>
+  <Test>
+    <Data>testdata4</Data>
+  </Test>
+</Tester>
