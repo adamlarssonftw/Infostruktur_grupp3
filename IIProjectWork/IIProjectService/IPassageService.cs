@@ -23,8 +23,20 @@ namespace IIProjectService
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        //Testmetoder epcis
         [OperationContract]
         IEnumerable<string> GetFilenames();
+        [OperationContract]
+        XElement GetEvent(string filename);
+
+        //Testmetoder naming
+        [OperationContract]
+        XElement GetVeichle(string epc);
+        [OperationContract]
+        XElement GetLocation(string epc);
+        [OperationContract]
+        IEnumerable<XElement> GetAllLocations();
 
         // TODO: Add your service operations here
     }

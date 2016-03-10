@@ -50,9 +50,32 @@ namespace IIProjectService
             return xmlData;
         }
 
+        //epcis-metoder
         public IEnumerable<string> GetFilenames()
         {
             return epcisEvent.GetFilenames();
+        }
+
+        public XElement GetEvent(string filename)
+        {
+            return epcisEvent.GetEvent(filename);
+        }
+
+        //naming-metoder
+        public XElement GetVeichle(string epc)
+        {
+            return namingEvent.GetVehicle(epc);
+        }
+
+        public XElement GetLocation(string epc)
+        {
+            return namingEvent.GetLocation(epc);
+        }
+
+        public IEnumerable<XElement> GetAllLocations()
+        {
+            IEnumerable<XElement> lista = namingEvent.GetAllLocations().Elements("Locations").Select(x => x.Element("Name"));
+            return lista;
         }
     }
 }
