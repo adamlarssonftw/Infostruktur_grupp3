@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml.Linq;
 
 namespace IIProjectService
 {
@@ -12,14 +13,33 @@ namespace IIProjectService
 
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IPassageService
     {
 
         [OperationContract]
         string GetData(int value);
+        [OperationContract]
+        XElement GetTestXML();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        //Testmetoder epcis
+        [OperationContract]
+        IEnumerable<string> GetFilenames();
+        [OperationContract]
+        XElement GetEvent(string filename);
+
+        //namingmetoder
+        [OperationContract]
+        XElement GetVeichle(string epc);
+        [OperationContract]
+        XElement GetLocation(string epc);
+        [OperationContract]
+        IEnumerable<XElement> GetAllLocations();
+
+        //[OperationContract]
+        //XElement FordonspassageByTime(string time);
 
         // TODO: Add your service operations here
     }
