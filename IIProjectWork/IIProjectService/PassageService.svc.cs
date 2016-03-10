@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Xml.Linq;
 using System.Web.Hosting;
+using IIProjectService.EventAndNamingServiceReference;
 
 namespace IIProjectService
 {
@@ -14,8 +15,11 @@ namespace IIProjectService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class PassageService : IPassageService
     {
-        string appdatafolder = HostingEnvironment.MapPath("/App_Data/TestXML.xml");
+        EpcisEventServiceClient epcisEvent = new EpcisEventServiceClient();
+        NamingServiceClient namingEvent = new NamingServiceClient();
 
+        string appdatafolder = HostingEnvironment.MapPath("/App_Data/TestXML.xml");
+        
         XElement xmlData;
 
         public PassageService()
@@ -44,6 +48,11 @@ namespace IIProjectService
         public XElement GetTestXML()
         {
             return xmlData;
+        }
+
+        public IEnumerable<string> GetFilenames()
+        {
+            return epcisEvent.GetFilenames();
         }
     }
 }

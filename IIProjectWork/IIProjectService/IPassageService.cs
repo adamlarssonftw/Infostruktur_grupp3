@@ -23,6 +23,8 @@ namespace IIProjectService
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+        [OperationContract]
+        IEnumerable<string> GetFilenames();
 
         // TODO: Add your service operations here
     }
