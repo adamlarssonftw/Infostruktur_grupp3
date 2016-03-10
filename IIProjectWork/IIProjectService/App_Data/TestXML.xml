@@ -1,15 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Tester>
-  <Test>
-    <Data>testdata1</Data>
-  </Test>
-  <Test>
-    <Data>testdata2</Data>
-  </Test>
-  <Test>
-    <Data>testdata3</Data>
-  </Test>
-  <Test>
-    <Data>testdata4</Data>
-  </Test>
-</Tester>
+
+<Fordonspassager>
+  <Fordonspassage>
+    <FordonetsEPC>urn:epc:id:giai:123456.1847447213244</FordonetsEPC>
+    <PlatsensEPC>urn:epc:id:sgln:735999271.000.13</PlatsensEPC>
+    <Tid>2011-03-29T13:25:43.3517370Z</Tid>
+    <Plats>Ankeborg</Plats>
+    <FordonetsEVN>123456789012</FordonetsEVN>
+    <Fordonsinnehavare>Green Cargo AB</Fordonsinnehavare>
+    <Underhållsansvarigtföretag>Green Cargo AB</Underhållsansvarigtföretag>
+    <FordonstypochFordonsunderkategori>H - Sluten vagn, specialtyp</FordonstypochFordonsunderkategori>
+    <Godkännande>
+      <Godkänd>Ja</Godkänd>
+      <Fråndatum>2011-04-13</Fråndatum>
+      <Avställningsdatum></Avställningsdatum>
+    </Godkännande>
+  </Fordonspassage>
+  <Tjänstemeddelande>
+    <Svarsinfo>
+      <Svarskod>1</Svarskod>
+      <Meddelande>Lyckades</Meddelande>
+      <Tjänsteansvarig>Grupp3</Tjänsteansvarig>
+      <ApplikationsnamnochVersion>Tågprogrammet V0.2</ApplikationsnamnochVersion>
+      <Tidförsvar>2016-03-10</Tidförsvar>
+    </Svarsinfo>
+    <Anropsinfo>
+      <Anropsansvarig>Användare 1</Anropsansvarig>
+      <Argument>hej</Argument>
+    </Anropsinfo>
+  </Tjänstemeddelande>
+</Fordonspassager>

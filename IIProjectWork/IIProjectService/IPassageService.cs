@@ -30,13 +30,16 @@ namespace IIProjectService
         [OperationContract]
         XElement GetEvent(string filename);
 
-        //Testmetoder naming
+        //namingmetoder
         [OperationContract]
         XElement GetVeichle(string epc);
         [OperationContract]
         XElement GetLocation(string epc);
         [OperationContract]
         IEnumerable<XElement> GetAllLocations();
+
+        //[OperationContract]
+        //XElement FordonspassageByTime(string time);
 
         // TODO: Add your service operations here
     }
